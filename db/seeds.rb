@@ -35,3 +35,6 @@ end
     })
   end
 end
+
+
+Post.create(title: "test", content: "very much testing", likes: 45, blogger_id:Blogger.first, destination_id:Destination.last)

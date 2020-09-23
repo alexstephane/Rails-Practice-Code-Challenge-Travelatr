@@ -1,0 +1,3 @@
+<%=@destination.name%>
+<br> 
+the most recent posts: <%= @destination.find_most_recent.each {|post| post.title }%>
