@@ -1,5 +1,8 @@
 
-
-
-
-<%=@blogger.all_likes%>
+<h1><%= @blogger.name %></h1>
+<br>
+<%if @blogger.featured_post%>
+featured: <%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %> <br> liked: <%= @blogger.featured_post.likes %> times.
+<%end%>
+<br>
+total likes on blogs: <%=@blogger.all_likes%>

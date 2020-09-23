@@ -7,7 +7,6 @@ class BloggersController < ApplicationController
 
   def show 
     @blogger=Blogger.find(params[:id])
-    
   end
 
   def new 
@@ -15,8 +14,14 @@ class BloggersController < ApplicationController
   end
 
   def create 
-    
-
+    @blogger = Blogger.new(
+      bloggers_params
+    )
+    if @blogger.save
+      redirect_to blogger_path(@blogger)
+    else
+      render :new
+    end
 
   end
 
